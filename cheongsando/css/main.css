@@ -429,6 +429,78 @@ header .tnb a:first-child:before {
     border-radius: 10px;
     background-color: rgba(23, 53, 77, 0.6);
     backdrop-filter: blur(10px);
+    padding: 49px 40px 0 40px;
+    /* 높이로 제한하고 있기 때문에 하단 여백 안줌 */
+    position: relative; /* more 정렬의 기준 */
+}
+.community .inner .notice:hover {
+    background-color: #013B88;
+}
+.community .inner .notice h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.community .inner .notice .list {
+    margin: 22px 0 0 0;
+}
+.community .inner .notice .list ul li a {
+    display: flex; /* strong span를 좌우로 배치 */
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+}
+.community .inner .notice .list ul li a strong {
+    width: calc(100% - 90px);
+    /* 100%에서 
+       옆에 날짜 넓이 + 둘사이여백을 뺌 */
+
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .inner .notice .list ul li a:hover strong {
+    font-weight: 800;
+}
+.community .inner .notice .list ul li a span {
+    width: 80px; 
+    /* 날짜는 자릿수가 늘지 않음  
+       25-1-1 이렇게 표시하면 자릿수가 변동됨 
+       그래서 날자표기는 25-01-01 이렇게 표시 - 자릿수를 변동시키지 않기 위해 
+       제일 넓은 숫자를 기준으로 최대 넓이를 고정값으로 줌 */
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+.community .inner .notice .more {
+    position: absolute; /* notice를 기준으로 정렬, after 정렬의 기준 */
+    right: 40px;
+    top: 48px;
+    padding: 0 21px 0 0; /* 아이콘을 배치할 영역까지 more로 잡혀야함 */
+    color: rgba(255,255,255,0.8);
+}
+.community .inner .notice .more::after {
+    content: "";/*필수*/
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_71_490' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_71_490)'%3E%3Cpath d='M6.87518 8.125H3.75018C3.5731 8.125 3.42466 8.0651 3.30487 7.94531C3.18508 7.82552 3.12518 7.67708 3.12518 7.5C3.12518 7.32292 3.18508 7.17448 3.30487 7.05469C3.42466 6.9349 3.5731 6.875 3.75018 6.875H6.87518V3.75C6.87518 3.57292 6.93508 3.42448 7.05487 3.30469C7.17466 3.1849 7.3231 3.125 7.50018 3.125C7.67727 3.125 7.8257 3.1849 7.9455 3.30469C8.06529 3.42448 8.12518 3.57292 8.12518 3.75V6.875H11.2502C11.4273 6.875 11.5757 6.9349 11.6955 7.05469C11.8153 7.17448 11.8752 7.32292 11.8752 7.5C11.8752 7.67708 11.8153 7.82552 11.6955 7.94531C11.5757 8.0651 11.4273 8.125 11.2502 8.125H8.12518V11.25C8.12518 11.4271 8.06529 11.5755 7.9455 11.6953C7.8257 11.8151 7.67727 11.875 7.50018 11.875C7.3231 11.875 7.17466 11.8151 7.05487 11.6953C6.93508 11.5755 6.87518 11.4271 6.87518 11.25V8.125Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .notice .more:hover {
+    font-weight: 800;
+}
+.community .inner .notice .more:hover::before {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 5px);
+    height: 1px;
+    background-color: rgba(255,255,255,0.2);
 }
 .community .inner .link {
     width: 316px;
@@ -457,6 +529,9 @@ header .tnb a:first-child:before {
     line-height: 1.2;
     position: relative; /* after 정렬의 기준 */
 }
+.community .inner .link ul li a:hover {
+    background-color: #013B88;
+}
 .community .inner .link ul li a::after {
     content: "";
     position: absolute; /* a를 기준으로 정렬 */
@@ -481,5 +556,48 @@ header .tnb a:first-child:before {
 }
 
 footer {
-    margin: 400px 0 0 0;
+    padding: 84px 0 99px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 42px;
+}
+footer .f_nav ul li {
+    position: relative; /* before 정렬의 기준 */
+}
+footer .f_nav ul li::before {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    left: -20px;
+    top: 5px;
+    width: 1px;
+    height: 13px;
+    background-color: #ccc;
+}
+footer .f_nav ul li:first-child::before {
+    display: none; /* 숨김 */
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .f_info {
+    margin: 48px 0 34px 0;
+    display: flex;
+    gap: 16px;
+}
+footer .copyright p {
+    margin: 7px 0 0 0;
+    color: #666;
+}
+footer .copyright p strong {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .copyright p strong::after {
+    content: "";
+    position: absolute; /* strong을 기준으로 정렬 */
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
 }
