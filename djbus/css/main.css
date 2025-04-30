@@ -1,0 +1,287 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 0 23px 0 23px;
+    line-height: 100px;
+    color: #1D1D1D;
+    font-size: 22px;
+    letter-spacing: -0.05em;
+    position: relative; /* after 정렬의 기준 */
+}
+header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
+    color: #255698;
+    font-weight: 800;
+}
+
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual h2 {
+    padding: 291px 0 5px 0;
+    display: block;
+}
+.visual p {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.int {
+    margin: 136px 0 0 0;
+}
+.int .group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.int .group .inner {
+    width: 511px;
+}
+.int .group .inner h2 {
+    color: #255698;
+}
+.int .group.txt_left .inner h2 {
+    margin: 76px 0 8px 0;
+}
+.int .group.txt_right .inner h2 {
+    margin: 104px 0 8px 0;
+}
+.int .group .inner .main_tit {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.2;
+}
+.int .group .inner .main_tit strong {
+    color: #255698;
+}
+.int .group .inner .sub_tit {
+    font-size: 20px;
+    margin: 8px 0 14px 0;
+}
+.int .group .inner .btn_wrap {
+    margin: 54px 0 0 0;
+    display: flex;
+    /* a태그가 inline태그라서 좌우로 배치되지만
+       중간에 space 한칸의 여백이 존재함
+       이를 없애고 내가 디자인한대로 정확하게 여백주려고 */
+}
+.int .group .inner .btn_wrap a {
+    color: #255698;
+    border: 1px solid #255698;
+    padding: 12px 29px 12px 29px;
+    border-radius: 25px;
+    display: inline-block;
+    /* a태그에 display:block; inline-block 필수   */
+    margin: 0 10px 0 0;
+}
+/* a태그 중에서 point 클래스를 갖은 a */
+.int .group .inner .btn_wrap a.point {
+    background-color: #255698;
+    color: #fff;
+}
+.int .group .inner .btn_wrap a:hover {
+    border-color: #229EA0;
+    background-color: #229EA0;
+    color: #fff;
+}
+.int .group .photo {
+    overflow: hidden;/* photo가 지정한 영역 밖에 나가는 요소는 숨김 */
+    border-radius: 30px;
+    /* 이미지 하단에 여백 */
+    font-size: 0;
+    line-height: 0;
+}
+
+.prom {
+    margin: 135px 0 0 0;
+    background: url(../images/pr_bg.jpg) no-repeat center top;
+    color: #fff;
+}
+.prom .news {
+    display: flex;
+    justify-content: space-between;
+    padding: 137px 0 0 0;
+    position: relative; /* more 정렬의 중심 */
+}
+.prom .news .tit h2 {
+    color: #66D7D1;
+}
+.prom .news .tit .sub_tit {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 5px 0 12px 0;
+}
+.prom .news .tit .sub_tit strong {
+    color: #66D7D1;
+}
+.prom .news .list {
+    width: 725px;
+    margin: 3px 0 0 0;
+}
+.prom .news .list ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.prom .news .list ul li:first-child {
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+.prom .news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 29px 0 24px 0;
+}
+.prom .news .list ul li a h3 {
+    font-size: 20px;
+}
+.prom .news .list ul li a:hover h3 {
+    font-weight: 800;
+}
+.prom .news .list ul li a span {
+    color: rgba(255,255,255,0.8);
+}
+.prom .news .more {
+    position: absolute; /* news를 기준으로 정렬 */
+    left: 0;
+    top: 345px;
+}
+.prom .news .more a {
+    display: block;
+    padding: 9px 30px 9px 30px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+.prom .news .more a:hover {
+    border-color: #66D7D1;
+    background-color: #66D7D1;
+    color: #255698;
+}
+.prom .video {
+    margin: 177px 0 0 0;
+    position: relative; /* more 정렬의 기준점 */
+}
+.prom .video .tit h2 {
+    color: #66D7D1;
+}
+.prom .video .tit p {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 5px 0 28px 0;
+}
+.prom .video .tit p strong {
+    color: #66D7D1;
+}
+.prom .video .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.prom .video .list ul li {
+    width: 404px;
+}
+.prom .video .list ul li a {
+    display: block;
+}
+.prom .video .list ul li a .photo {
+    border-radius: 20px;
+    border: 2px solid #255698;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.prom .video .list ul li a .photo img {
+    transition: 0.5s; /* 0.5초 동안 부드럽게 처리해 */
+}
+.prom .video .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1); /* 가로세로 1.2배 */
+}
+.prom .video .list ul li a h3 {
+    font-size: 20px;
+    color: #1D1D1D;
+    margin: 20px 0 0 15px;
+}
+.prom .video .list ul li a:hover h3 {
+    font-weight: 800;
+}
+.prom .video .more {
+    position: absolute; /* video를 기준으로 정렬 */
+    right: 0;
+    top: 33px;
+}
+.prom .video .more a {
+    display: block;
+    padding: 9px 30px 9px 30px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+.prom .video .more a:hover {
+    border-color: #66D7D1;
+    background-color: #66D7D1;
+    color: #255698;
+}
+
+footer {
+    background-color: #202020;
+    padding: 68px 0 78px 0;
+    color: rgba(255,255,255,0.8);
+    margin: 141px 0 0 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 41px;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: ""; /* 필수 */
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+}
+/* li중에서 마지막 li의 after가 숨김처리 */
+footer .f_nav ul li:last-child::after {
+    display: none; /* 숨김 */
+}
+footer .f_nav ul li a {
+    display: block;
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline; /* 밑줄 */
+}
+footer .f_info {
+    margin: 35px 0 30px 0;
+}
+footer .f_info span {
+    margin: 0 16px 0 0;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
