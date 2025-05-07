@@ -124,3 +124,130 @@ header .tnb .lang {
                     display: none; /* 줄바꿈 삭제 */
                 }
 }/*@media*/
+
+.project {
+    margin: 179px 0 0 0;
+}
+.project .wrapper {
+    display: flex; /* tit/list 좌우 배치 */
+    justify-content: space-between;
+    align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서 */
+}
+.project .tit {
+    position: sticky; /* 감싸는 wrapper를 기준으로 정렬 무조건 */
+    top: 20px; 
+    /* 좌우 정렬값 주면 안됨.. top값은 상단에 고정되었을때 위치값 
+       sticky의 단점 
+       감싸는 요소 중에 단한개라도 overflow:hidden;값을 가지고 있으면 
+       적용안됨. 사실상 못쓴다고 생각하면 됩니다. 
+    */
+}
+.project .tit h2 {
+    color: #244D8E;
+    margin: 0 0 14px 0;
+}
+.project .list {
+    width: 57.54%; /* 725/1260*100 =  */
+    margin: 197px 0 0 0;
+}
+.project .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 2줄이상 허용 */
+    gap: 24px 24px;
+}
+.project .list ul li {
+    width: calc(50% - 12px);
+    /*  100% / 한줄에 보일 li 갯수 = 100%/2 = 50%
+        한줄에 있는 여백의 총합 / 한줄에 보일 li 갯수 = 24px/2 = 12px */
+}
+.project .list ul li:nth-child(even) { 
+    /* even - 짝수, odd - 홀수 */
+    transform: translateY(-181px);
+}
+.project .list ul li a {
+    display: block;
+    position: relative; /* txt 정렬의 기준 */
+}
+.project .list ul li a .photo {
+    overflow: hidden;
+    border-radius: 20px;
+    height: 500px;
+    position: relative; /* before 정렬의 기준 */
+}
+.project .list ul li a .photo::before {
+    content: "";
+    position: absolute; /* photo를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #244D8E;
+    opacity: 0;
+    transition: 0.2s;
+}
+.project .list ul li a .photo img {
+    /* 이미지를 감싸는 영역 photo 사이즈만큼만 나오게 리사이즈 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .list ul li a .txt {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 52px;
+    width: 100%;
+    color: #fff;
+    padding: 0 40px;
+}
+.project .list ul li a .txt h3 {
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.project .list ul li a .txt p {
+    display: none;
+    margin: 10px 0;
+    color: rgba(255,255,255,0.8);
+}
+.project .list ul li a .txt span {
+    display: none;
+    /* 숨김 - display:none은 아예 태그가 존재하지 않는 
+              것처럼 코딩됨 */
+    color: rgba(255,255,255,0.6);
+    padding: 0 22px 0 0;
+    font-size: 15px;
+    position: relative; /* after 정렬의 기준 */
+}
+.project .list ul li a .txt span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_56_2166' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_56_2166)'%3E%3Cpath d='M12.4586 9.56311H3.9375C3.77788 9.56311 3.64425 9.50923 3.53662 9.40148C3.42887 9.29386 3.375 9.16023 3.375 9.00061C3.375 8.84098 3.42887 8.70736 3.53662 8.59973C3.64425 8.49198 3.77788 8.43811 3.9375 8.43811H12.4586L9.98944 5.96892C9.87794 5.8573 9.82288 5.72673 9.82425 5.57723C9.82575 5.42773 9.88081 5.2948 9.98944 5.17842C10.1058 5.06217 10.2394 5.00211 10.3903 4.99823C10.5413 4.99436 10.675 5.05061 10.7914 5.16698L14.1504 8.52605C14.2207 8.5963 14.2702 8.67036 14.2989 8.74823C14.3278 8.82611 14.3422 8.91023 14.3422 9.00061C14.3422 9.09098 14.3278 9.17511 14.2989 9.25298C14.2702 9.33086 14.2207 9.40492 14.1504 9.47517L10.7914 12.8342C10.6797 12.9457 10.5473 13.0008 10.3941 12.9994C10.2407 12.9979 10.1058 12.939 9.98944 12.8228C9.88081 12.7064 9.82456 12.5747 9.82069 12.4275C9.81681 12.2804 9.87306 12.1487 9.98944 12.0323L12.4586 9.56311Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/************ 오버했을때 ******************/
+
+.project .list ul li a:hover .photo::before {
+    opacity: 0.9;
+}
+.project .list ul li a:hover .txt p {
+    display: block; /* none으로 숨긴건 흔히 block으로 보이게함 */
+}
+.project .list ul li a:hover .txt span {
+    display: inline-block;
+}
+
+@media screen and (max-width:640px){
+    
+}/*@media*/
+
+
+footer {
+    margin: 2000px 0 0 0;
+}
