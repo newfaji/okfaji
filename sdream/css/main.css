@@ -231,20 +231,95 @@ header .tnb .lang {
     background-position: center center;
     background-repeat: no-repeat;
 }
-/************ 오버했을때 ******************/
+@media screen and (min-width:641px){
+            /************ 오버했을때  641px 이상(포함)에서만 작동 ******************/
 
-.project .list ul li a:hover .photo::before {
-    opacity: 0.9;
-}
-.project .list ul li a:hover .txt p {
-    display: block; /* none으로 숨긴건 흔히 block으로 보이게함 */
-}
-.project .list ul li a:hover .txt span {
-    display: inline-block;
-}
-
-@media screen and (max-width:640px){
-    
+            .project .list ul li a:hover .photo::before {
+                opacity: 0.9;
+            }
+            .project .list ul li a:hover .txt p {
+                display: block; /* none으로 숨긴건 흔히 block으로 보이게함 */
+            }
+            .project .list ul li a:hover .txt span {
+                display: inline-block;
+            }
+}/*@media*/
+@media screen and (max-width:640px){ /* 640px 이하 (포함)에서만 작동 */
+                        .project {
+                            margin: 92px 0 0 0;
+                        }
+                        .project .wrapper {
+                            display: block; 
+                            /* flex해제 -display에서 다른 속성값을 주면 해제 
+                               tit/list 위아래로 배치 */
+                        }
+                        .project .tit {
+                            position: relative; /* sticky을 해제하기 위해서 다른 속성을 줌 */
+                            top: auto; /* top값을 지정하지 않은 것 처럼 취소하는 값.. 0이랑 다름 */
+                        }
+                        .project .tit h2 {
+                            margin: 0 0 6px 0;
+                        }
+                        .project .list {
+                            width: auto; /* block요소 이기때문에 100% 들어감 */
+                            margin: 22px 0 0 0;
+                        }
+                        .project .list ul {
+                            gap: 20px 16px; /* 위아래 - 좌우 */
+                        }
+                        .project .list ul li {
+                            width: calc(50% - 8px);
+                            /*  100% / 한줄에 보일 li 갯수 = 100%/2 = 50%
+                                한줄에 있는 여백의 총합 / 한줄에 보일 li 갯수 = 16px/2 = 8px */
+                        }
+                        .project .list ul li:nth-child(even) { 
+                            transform: none; /* 짝수 위로 이동한거 취소 */
+                        }
+                        .project .list ul li a .photo {
+                            border-radius: 5px;
+                            height: 81px;
+                        }
+                        .project .list ul li a .txt {
+                            /* absolute -> 해제 */
+                            position: relative; 
+                            left: auto;
+                            bottom: auto;
+                            width: auto;
+                            color: #1D1D1D;
+                            padding: 9px 0 0 0;
+                        }
+                        .project .list ul li a .txt h3 {
+                            font-weight: 500;
+                            font-size: 16px;
+                        }
+                        .project .list ul li a .txt h3 br {
+                            display: none; /* 줄바꿈 삭제 */
+                        }
+                        .project .list ul li a .txt p {
+                            display: none;
+                            margin: 10px 0;
+                            color: rgba(255,255,255,0.8);
+                        }
+                        .project .list ul li a .txt span {
+                            display: none;
+                            /* 숨김 - display:none은 아예 태그가 존재하지 않는 
+                                    것처럼 코딩됨 */
+                            color: rgba(255,255,255,0.6);
+                            padding: 0 22px 0 0;
+                            font-size: 15px;
+                            position: relative; /* after 정렬의 기준 */
+                        }
+                        .project .list ul li a .txt span::after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 2px;
+                            width: 18px;
+                            height: 18px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_56_2166' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_56_2166)'%3E%3Cpath d='M12.4586 9.56311H3.9375C3.77788 9.56311 3.64425 9.50923 3.53662 9.40148C3.42887 9.29386 3.375 9.16023 3.375 9.00061C3.375 8.84098 3.42887 8.70736 3.53662 8.59973C3.64425 8.49198 3.77788 8.43811 3.9375 8.43811H12.4586L9.98944 5.96892C9.87794 5.8573 9.82288 5.72673 9.82425 5.57723C9.82575 5.42773 9.88081 5.2948 9.98944 5.17842C10.1058 5.06217 10.2394 5.00211 10.3903 4.99823C10.5413 4.99436 10.675 5.05061 10.7914 5.16698L14.1504 8.52605C14.2207 8.5963 14.2702 8.67036 14.2989 8.74823C14.3278 8.82611 14.3422 8.91023 14.3422 9.00061C14.3422 9.09098 14.3278 9.17511 14.2989 9.25298C14.2702 9.33086 14.2207 9.40492 14.1504 9.47517L10.7914 12.8342C10.6797 12.9457 10.5473 13.0008 10.3941 12.9994C10.2407 12.9979 10.1058 12.939 9.98944 12.8228C9.88081 12.7064 9.82456 12.5747 9.82069 12.4275C9.81681 12.2804 9.87306 12.1487 9.98944 12.0323L12.4586 9.56311Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        }
 }/*@media*/
 
 
