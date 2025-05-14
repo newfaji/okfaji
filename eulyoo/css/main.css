@@ -118,20 +118,21 @@ header .tnb .search {
 }
 .book .book_wrap {
     width: calc(50% + 630px);
-    position: relative;
+    position: relative; /* more정렬의 기준 */
     left: calc(50% - 630px);
     display: flex; /* tit, list 좌우 배치 */
     justify-content: space-between;
 }
 .book .book_wrap .tit h2 {
     font-size: 40px;
-    color: #1d1d1d;
+    color: #2E2C2D;
     margin: 10px 0 15px 0;
 }
 .book .book_wrap .list {
     width: calc(100% - 258px);
     /* book_wrap의 넓이를 100%로 하고 왼쪽 tit의 넓이를 빼기 */
     overflow-x: hidden;
+    padding: 10px 0 0 10px;
 }
 .book .book_wrap .list ul {
     display: flex; /* li를 좌우로 */
@@ -145,18 +146,144 @@ header .tnb .search {
 }
 .book .book_wrap .list ul li {
     width: 230px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 .book .book_wrap .list ul li a {
     display: block;
 }
 .book .book_wrap .list ul li a .photo {
-    
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #EDEDED;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 .book .book_wrap .list ul li a .photo img {
     width: 100%; 
     /* 높이는 비율에 맞게 알아서 
        - 책은 이미지 전체가 나와야 하기때문에 object-fit 안줌 */
+    vertical-align: top; 
+    /* 이미지에 vertical-align을 주면 이미지 하단에 행간이 사라짐 */
 }
+.book .book_wrap .list ul li a h3 {
+    font-size: 20px;
+    color: #2E2C2D;
+    margin: 25px 0 5px 0;
+
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .book_wrap .list ul li a strong {
+    display: block;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .book_wrap .more {
+    position: absolute; /* book_wrap을 기준으로 정렬 */
+    left: 0;
+    top: 217px;
+    color: #895F46;
+    padding: 0 27px 0 0;
+}
+.book .book_wrap .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 17px;
+    height: 17px;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_16_100' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='18'%3E%3Crect x='0.355469' y='0.854492' width='16.2888' height='16.2888' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_16_100)'%3E%3Cpath d='M8.49991 15.1072C8.30761 15.1072 8.14642 15.0422 8.01633 14.9121C7.88625 14.782 7.82121 14.6208 7.82121 14.4285V9.67763H3.0703C2.878 9.67763 2.71681 9.61259 2.58673 9.48251C2.45664 9.35242 2.3916 9.19123 2.3916 8.99893C2.3916 8.80663 2.45664 8.64544 2.58673 8.51536C2.71681 8.38527 2.878 8.32023 3.0703 8.32023H7.82121V3.56933C7.82121 3.37703 7.88625 3.21584 8.01633 3.08575C8.14642 2.95567 8.30761 2.89062 8.49991 2.89062C8.69221 2.89062 8.8534 2.95567 8.98348 3.08575C9.11357 3.21584 9.17861 3.37703 9.17861 3.56933V8.32023H13.9295C14.1218 8.32023 14.283 8.38527 14.4131 8.51536C14.5432 8.64544 14.6082 8.80663 14.6082 8.99893C14.6082 9.19123 14.5432 9.35242 14.4131 9.48251C14.283 9.61259 14.1218 9.67763 13.9295 9.67763H9.17861V14.4285C9.17861 14.6208 9.11357 14.782 8.98348 14.9121C8.8534 15.0422 8.69221 15.1072 8.49991 15.1072Z' fill='%23895F46'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media screen and (min-width:641px){
+        /********** 오버효과 ***********/
+        .book .book_wrap .list ul li a h3 span {
+            position: relative; /* after 정렬의 기준 */
+        }
+        .book .book_wrap .list ul li a h3 span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 1px;
+            background-color: #2E2C2D;
+            transition: 0.5s;
+        }
+        .book .book_wrap .list ul li a:hover h3 span::after {
+            width: 100%; /* span태그를 기준으로 100% */
+        }
+}/*@media*/
+@media screen and (max-width:640px){
+        .book {
+            margin: 111px 0 0 0;
+        }
+        .book .book_wrap {
+            width: auto;
+            left: auto;
+            display: block; /* tit, list 좌우 배치 flex 해제  */
+        }
+        .book .book_wrap .tit {
+            margin: 0 60px 0 20px;
+        }
+        .book .book_wrap .tit h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+        .book .book_wrap .tit h2 br {
+            display: none; /* 줄바꿈 삭제 */
+        }
+        .book .book_wrap .tit p {
+            display: none; /* 숨김 */
+        }
+        .book .book_wrap .list {
+            width: auto;
+            overflow-x: auto;
+            padding: 25px 0 10px 20px;
+        }
+        .book .book_wrap .list ul {
+            gap: 16px;
+            width: 1162px;
+            /*
+                li의 넓이 * li의 갯수 = 150*7 = 1050
+                사이 여백 * li의 갯수 = 16*7 = 112
+                1050 + 112 = 1,162
+            */
+        }
+        .book .book_wrap .list ul li {
+            width: 150px;
+        }
+        .book .book_wrap .list ul li a h3 {
+            font-size: 18px;
+            margin: 14px 0 3px 0;
+        }
+        .book .book_wrap .more {
+            left: auto;
+            right: 20px;
+            top: 4px;
+            width: 30px;
+            height: 30px;
+            background-color: #E4E0D4;
+            border-radius: 50%;
+            padding: 0;
+        }
+        .book .book_wrap .more::after {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 16px;
+        }
+        .book .book_wrap .more span {
+            display: none; /* 숨김 */
+        }
+}/*@media*/
+
 footer {
     margin: 500px 0 0 0;
 }
