@@ -642,9 +642,152 @@ header .tnb .search {
     }
 }/*@media*/
 @media screen and (max-width:640px){
-    
+            .story {
+                margin: 115px 0 0 0;
+            }
+            .story .tit h2 {
+                font-size: 28px;
+            }
+            .story .list {
+                margin: 24px 0 0 0;
+            }
+            .story .list ul {
+                display: block; /* flex 해제 */
+            }
+            .story .list ul li {
+                width: auto;
+                border: 0;/* 4곳에 들어가는 border 삭제 */
+                border-bottom: 1px solid #E4E0D4;
+                border-radius: 0;
+                padding: 17px 0;
+            }
+            .story .list ul li:first-child {
+                border-top: 1px solid #E4E0D4;
+            }
+            .story .list ul li a {
+                display: flex; /* photo, txt 좌우 배치 */
+                flex-direction: row-reverse; /* 좌우 반전 */
+                justify-content: space-between;
+            }
+            .story .list ul li a .photo {
+                width: 37.5%; 
+                /*width: 120px;*/
+                height: 75px; /* 짧은거 */
+                border-radius: 0;
+            }
+            .story .list ul li.long a .photo {
+                height: 75px; /* 긴거 */
+            }
+            .story .list ul li a .txt {
+                width: 57.5%; 
+                /* width: calc(100% - 136px);*/
+                padding: 0;
+            }
+            .story .list ul li a .txt strong {
+                /* 1줄제한 -> 여러줄 허용 */
+                white-space: normal; /* 여러줄 허용 */
+                overflow: visible; /* 넘치는 요소 안짜름 */
+            }
+            .story .list ul li a .txt h3 {
+                font-size: 16px;
+                margin: 4px 0 0 0;
+            
+                /* 1줄제한 -> 여러줄 허용 */
+                white-space: normal; /* 여러줄 허용 */
+                overflow: visible; /* 넘치는 요소 안짜름 */
+            }
+            .story .list ul li a .txt p {
+                display: none; /* 숨김 */
+            }
+            .story .more {
+                right: 0;
+                top: 4px;
+                width: 30px;
+                height: 30px;
+                background-color: #E4E0D4;
+                border-radius: 50%;
+                padding: 0;
+            }
+            .story .more::after {
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-size: 16px;
+            }
+            .story .more span {
+                display: none; /* 숨김 */
+            }
 }/*@media*/
 
 footer {
-    margin: 500px 0 0 0;
+    margin: 137px 0 0 0;
+    padding: 97px 0 106px 0;
+    background-color: #895F46;
+    color: #E4E0D4;
 }
+footer .wrapper {
+    display: flex; /* slogan, f_info 좌우 */
+    justify-content: space-between;
+    position: relative; /* copyright 정렬의 기준 */
+}
+footer .slogan p {
+    font-size: 30px;
+}
+footer .f_info h3 {
+    font-size: 25px;
+    margin: 0 0 13px 0;
+}
+footer .f_info address,
+footer .f_info ul.tel {
+    margin-bottom: 54px;
+}
+footer .f_info ul.sns {
+    display: flex;
+    gap: 14px;
+}
+footer .copyright {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+footer .copyright .f_logo {
+    margin: 0 0 22px 0;
+}
+footer .copyright .f_logo img {
+    width: 190px;
+}
+@media screen and (max-width:640px){
+            footer {
+                margin: 78px 0 0 0;
+                padding: 84px 0 105px 0;
+            }
+            footer .wrapper {
+                display: block; /* flex 해제 */
+            }
+            footer .slogan p {
+                font-size: 20px;
+            }
+            footer .f_info {
+                margin: 65px 0 0 0;
+            }
+            footer .f_info h3 {
+                font-size: 18px;
+                margin: 0 0 3px 0;
+            }
+            footer .f_info address,
+            footer .f_info ul.tel {
+                margin-bottom: 32px;
+            }
+            footer .copyright {
+                position: relative; /* absolute 해제 */
+                left: auto;
+                bottom: auto;
+                margin: 73px 0 0 0;
+            }
+            footer .copyright .f_logo {
+                margin: 0 0 9px 0;
+            }
+            footer .copyright .f_logo img {
+                width: 144px;
+            }
+}/*@media*/
