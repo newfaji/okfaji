@@ -114,6 +114,20 @@ header .gnb .gnb_wrap ul li a {
 }
 .product .list ul li a {
     display: block;
+    position: relative;
+    padding-bottom: 50px;
+}
+.product .list ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.875 7.29175L19.8187 9.348L26.4979 16.0417H2.91663V18.9584H26.4979L19.8041 25.6522L21.875 27.7084L32.0833 17.5001L21.875 7.29175Z' fill='%233d3d3d'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .product .list ul li a .photo {
     overflow: hidden;
@@ -153,9 +167,10 @@ header .gnb .gnb_wrap ul li a {
         width: calc(100% + 20px);
     }
     .product .list ul { /* (250+20)*5 = 1350 */
-        width: 1350px;
+        width: 1330px;
         padding: 14px 0;/* 스크롤바가 콘텐츠 바로 아래 생성되는 것을 막기 위해 */
         flex-wrap: nowrap;
+        justify-content: flex-start;
         gap: 16px;
     }
     .product .list ul li {
@@ -163,6 +178,13 @@ header .gnb .gnb_wrap ul li a {
     }
     .product .list ul li:nth-child(even) {
         transform: translateY(0);
+    }
+    .product .list ul li a {
+        padding-bottom: 40px;
+    }
+    .product .list ul li a::after {
+        width: 25px;
+        height: 25px;
     }
     .product .list ul li a .photo {
         height: 250px;
