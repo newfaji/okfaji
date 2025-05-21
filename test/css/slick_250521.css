@@ -1,0 +1,101 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual .popup .popup_wrap .popup_item {
+    height: 800px;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .popup .popup_wrap .popup_item.bg1 {
+    background-image: url(../images/popup01.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg2 {
+    background-image: url(../images/popup02.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg3 {
+    background-image: url(../images/popup03.jpg);
+}
+.visual .popup .popup_wrap .popup_item h3 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 342px 0 20px 0;
+}
+
+.visual .slick-prev,
+.visual .slick-next {
+    position: absolute; /* popup_wrap으르 기준으로 정렬 */
+    left: 20px;
+    top: 368px;
+    z-index: 10;
+    width: 28px;
+    height: 51px;
+    color: transparent; /* 글자를 안보이게 */
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='52' viewBox='0 0 28 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.75747 26L26.4725 46.715C27.0189 47.2614 27.2852 47.9046 27.2714 48.6449C27.2572 49.3855 26.9769 50.029 26.4306 50.5754C25.8838 51.1217 25.2403 51.3949 24.5001 51.3949C23.7599 51.3949 23.1164 51.1217 22.5696 50.5754L1.47434 29.522C0.977048 29.0247 0.608548 28.4676 0.36884 27.8507C0.129131 27.2338 0.00927734 26.6169 0.00927734 26C0.00927734 25.3831 0.129131 24.7661 0.36884 24.1492C0.608548 23.5323 0.977048 22.9752 1.47434 22.4779L22.5696 1.38198C23.1164 0.835645 23.767 0.569584 24.5214 0.583792C25.2758 0.598001 25.9262 0.87827 26.4725 1.4246C27.0189 1.97094 27.292 2.61444 27.292 3.3551C27.292 4.09531 27.0189 4.73858 26.4725 5.28492L5.75747 26Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .slick-next {
+    left: auto;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.visual ul.slick-dots {
+    position: absolute; /* popup_wrap을 기준으로 정렬 */
+    left: 0;
+    bottom: 32px;
+    width: 100%;
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: center; /* 가운데 */
+    gap: 5px;
+}
+.visual ul.slick-dots li button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: transparent; /* 글자색 투명 - 글자 안보이게 */
+}
+.visual ul.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+.visual .btn_wrap .ctrl_stop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.visual .btn_wrap .ctrl_play {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+}
+@media screen and (max-width:1440px){
+    .visual .slick-prev,
+    .visual .slick-next {
+        display: none !important; 
+        /* css 적용 우선순위 상관없이 무조건 먼저 실행하도록 하는 명령
+           important 
+           -- 단 주의 하나의 요소에 pc버전에서 important, 
+              모바일에서 important 이렇게 남발하면 스타일이 꼬임 */
+    }
+}/*@media*/
+
+@media screen and (max-width:768px){
+    .visual .popup .popup_wrap .popup_item {
+        height: 600px;
+    }
+    .visual .popup .popup_wrap .popup_item h3 {
+        font-size: 30px;
+        padding: 205px 0 10px 0;
+    }
+    .visual ul.slick-dots {
+        bottom: 25px;
+    }
+}
