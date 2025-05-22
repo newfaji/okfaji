@@ -2,6 +2,9 @@
 @import url(font.css);
 @import url(common_full.css);
 
+.visual {
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
 .visual .popup .popup_wrap .popup_item {
     height: 800px;
     color: #fff;
@@ -46,11 +49,9 @@
 
 .visual ul.slick-dots {
     position: absolute; /* popup_wrap을 기준으로 정렬 */
-    left: 0;
+    right: 50%;
     bottom: 32px;
-    width: 100%;
     display: flex; /* li를 좌우로 배치 */
-    justify-content: center; /* 가운데 */
     gap: 5px;
 }
 .visual ul.slick-dots li button {
@@ -64,17 +65,31 @@
 .visual ul.slick-dots li.slick-active button {
     background-color: #fff;
 }
+.visual .btn_wrap {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% + 10px);
+    bottom: 29px;
+    display: flex; /* js에서 요소에 display:inline-block을 줘서 코딩이 틀어짐 */
+}
 .visual .btn_wrap .ctrl_stop {
     display: block;
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6.125C3.79375 6.125 3.61719 6.05156 3.47031 5.90469C3.32344 5.75781 3.25 5.58125 3.25 5.375V1.625C3.25 1.41875 3.32344 1.24219 3.47031 1.09531C3.61719 0.948438 3.79375 0.875 4 0.875C4.20625 0.875 4.38281 0.948438 4.52969 1.09531C4.67656 1.24219 4.75 1.41875 4.75 1.625V5.375C4.75 5.58125 4.67656 5.75781 4.52969 5.90469C4.38281 6.05156 4.20625 6.125 4 6.125ZM1 6.125C0.79375 6.125 0.617188 6.05156 0.470313 5.90469C0.323438 5.75781 0.25 5.58125 0.25 5.375V1.625C0.25 1.41875 0.323438 1.24219 0.470313 1.09531C0.617188 0.948438 0.79375 0.875 1 0.875C1.20625 0.875 1.38281 0.948438 1.52969 1.09531C1.67656 1.24219 1.75 1.41875 1.75 1.625V5.375C1.75 5.58125 1.67656 5.75781 1.52969 5.90469C1.38281 6.05156 1.20625 6.125 1 6.125Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 .visual .btn_wrap .ctrl_play {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: green;
+    display: none; /* 처음에는 숨김 */
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='4' height='5' viewBox='0 0 4 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.62813 2.1813C3.68438 2.2188 3.72656 2.26567 3.75469 2.32192C3.78281 2.37817 3.79688 2.43755 3.79688 2.50005C3.79688 2.56255 3.78281 2.62192 3.75469 2.67817C3.72656 2.73442 3.68438 2.7813 3.62813 2.8188L0.571875 4.75942C0.540625 4.77817 0.507813 4.79224 0.473437 4.80161C0.439062 4.81099 0.40625 4.81567 0.375 4.81567C0.275 4.81567 0.1875 4.77974 0.1125 4.70786C0.0375002 4.63599 2.34949e-08 4.54692 3.27835e-08 4.44067L3.72093e-07 0.559423C3.81382e-07 0.453173 0.0375005 0.364111 0.112501 0.292236C0.1875 0.22036 0.275001 0.184423 0.375 0.184423C0.40625 0.184423 0.439063 0.18911 0.473438 0.198486C0.507813 0.207861 0.540625 0.221923 0.571875 0.240673L3.62813 2.1813Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 @media screen and (max-width:1440px){
     .visual .slick-prev,
@@ -98,4 +113,154 @@
     .visual ul.slick-dots {
         bottom: 25px;
     }
+}
+
+.biz {
+    margin: 146px 0 0 0;
+}
+.biz .tit h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.biz .list {
+    margin: 40px 0 0 0;
+    width: calc(100% + 24px);
+}
+.biz .list .list_wrap .list_item {
+    margin-right: 24px;
+}
+.biz .list .list_wrap .list_item a {
+    display: block;
+}
+.biz .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 218px;
+}
+.biz .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list .list_wrap .list_item a h3 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 20px 0 13px 0;
+}
+
+@media screen and (max-width:768px){
+    .biz {
+        margin: 71px 0 0 0;
+    }
+    .biz .tit h2 {
+        font-size: 25px;
+    }
+    .biz .list {
+        margin: 24px 0 0 0;
+        width: calc(100% + 16px);
+    }
+    .biz .list .list_wrap .list_item {
+        margin-right: 16px;
+    }
+    .biz .list .list_wrap .list_item a .photo {
+        height: 197px;
+    }
+    .biz .list .list_wrap .list_item a h3 {
+        font-size: 20px;
+        margin: 16px 0 9px 0;
+    }
+}
+
+.notice {
+    background-color: #004289;
+    color: #fff;
+    margin: 146px 0 0 0;
+    padding: 175px 0 121px 0;
+}
+.notice .tit h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.notice .list {
+    margin: 47px 0 0 0;
+    width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+    /* wrapper 1260px의 절반 630px */
+}
+.notice .list .list_wrap .list_item {
+    width: 404px;
+    margin-right: 24px;
+}
+.notice .list .list_wrap .list_item a {
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #555;
+}
+.notice .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 326px;
+    border-radius: 20px 20px 0 0;
+}
+.notice .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.notice .list .list_wrap .list_item a .txt {
+    padding: 44px 30px;
+}
+.notice .list .list_wrap .list_item a .txt h3 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 13px 0;
+}
+
+@media screen and (max-width:1300px){
+    .notice .list {
+        width: calc(100% - 20px);
+        left: 20px;
+    }
+}/*@media*/
+
+@media screen and (max-width:768px){
+    .notice {
+        margin: 70px 0 0 0;
+        padding: 80px 0 60px 0;
+    }
+    .notice .tit h2 {
+        font-size: 25px;
+    }
+    .notice .list {
+        margin: 25px 0 0 0;
+    }
+    .notice .list .list_wrap .list_item {
+        width: 250px;
+        margin-right: 16px;
+    }
+    .notice .list .list_wrap .list_item a {
+        border-radius: 10px;
+    }
+    .notice .list .list_wrap .list_item a .photo {
+        height: 205px;
+        border-radius: 10px 10px 0 0;
+    }
+    .notice .list .list_wrap .list_item a .txt {
+        padding: 27px 20px;
+    }
+    .notice .list .list_wrap .list_item a .txt h3 {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+    }
+}
+
+footer {
+    margin: 500px 0 0 0;
 }
