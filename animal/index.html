@@ -15,7 +15,18 @@
     <title>동물보호센터</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문바로가기</a>
+        <!-- id="skip_content" 인 요소로 바로가기 (내부링크) -->
+    </div>
     <div id="wrap">
+        <!--
+            header에 마우스를 오버하거나.. 스크롤을 내리면 - fixed 클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li에만 over 클래스를 추가
+
+            모바일에서 메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+            모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가
+        -->
         <header>
             <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
@@ -89,7 +100,225 @@
                     </div><!--btn_wrap-->
                 </div><!--swiper-->
             </section><!--visual-->
-            <section class="find"></section><!--find-->
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!-- 선택된 li에는 active클래스 추가, button에 선택됨이라고 써줌
+                                     aria-selected가 true가 선택된 것 false 선택이 안된 것 
+                                     data-content li를 눌렀을때 나타날 탭 콘텐츠 id값 
+                                     li를 클릭했을때 data-content값을 호출해서 id가 같은 요소만 보이게함 
+                                     data-content 는 내맘대로 속성을 추가.... (값을 저장할 공간이 필요해서 - 표준위배)
+                                     data-link라던가 ... data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성 -->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을 <span class="">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2 " data-content="tab_item2"><button>주인을 <span class=""></span></button></li>
+                            </ul>
+                        </div><!--tab_list-->
+                        <div class="tab_content">
+                            <!-- 가족을, 주인을 탭 콘텐츠를 구분 item1/item2로 클래스명 구분
+                                 현재 선택된 탭 콘텐츠는 active클래스 추가 -->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find01.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>스텐다드 푸들 암컷 8살 푸들 암컷 8살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 마포구 월드컵공원</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-22</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>갈색 곱슬 배쪽은 약간 흰색털</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find02.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>골든 리트리버 수컷 1살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경상북도 포항시 북구 기북면율산</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-15</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘따름 리트리버잡종</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find03.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>코리아 쇼트 헤어 암컷</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>대구광역시 달성군 서재보성타운 1차</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-06</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>완전 검정 고양이. 가슴에만 조금 흰털이 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find04.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>앵무새 수컷 3살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 송파구 잠실학원 사거리</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-04-27</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>어른손바닥 길이의 키로 작은 앵무새</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab_item item2" id="tab_item2">
+                                <h3 class="blind">주인을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find05.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>스피츠 암컷 1살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 마포구 경의선숲길</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-20</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>흰색 사람을 좋아함</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find06.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>그린칙 코뉴어 앵무새</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 중랑구 중화동 태릉시</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-18</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>푸른소라색 사랑앵무에요.  사람 어깨에 앉거나 핸드폰 위에 잘 앉아요.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find07.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>믹스묘 수컷 4살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>전라북도 김제시 죽산면 명마마을</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-15</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>흰색고양이며 얼굴 양쪽이 털이 많지않아 분홍색이 세로줄처럼 보입니다</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find08.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>코리아 쇼트 헤어 수컷 2살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>광주광역시 동구 지산동 법원근처 </span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-07</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>고등어 냥이이고 얼굴에 점이 있습니다</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--//tab_content-->
+                    </div><!--//list-->
+                </div>
+            </section><!--find-->
             <section class="slogan"></section><!--slogan-->
             <section class="adopt"></section><!--adopt-->
             <section class="review"></section><!--review-->
