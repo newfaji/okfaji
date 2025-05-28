@@ -122,16 +122,55 @@ $(document).ready(function(){
     })
     /*************************** visual swiper : 끝 *****************************/
 
-    /**************************** find 탭 기능 : 시작 ********************* */
+    /**************************** find 탭 기능 : 시작 ***************
+     * 1. 클릭한 li에서 data-content 값을 가져와서
+     *    ==> tab_item 중에 해당 값이 id인 요소를 찾아서 나타나게 해야함 (다른 요소는 숨김)
+     * 2. 클릭한 li에만 active 클래스 줌 
+     * 3. 클릭한 li안에 있는 span에 선택됨이라고 글자 써줌 (다른 li에 있는 건 삭제)
+     * 4. 클릭한 li 속성 aria-selected값을 true로 변경 (다른 li는 모두 false)
+     * ****** */
     let find_content //클릭한 메뉴의 이름(id)
     $('.find .list .tab_list ul li').on('click', function(){
         
         if($(this).hasClass('active') == false){
             //console.log('선택안된메뉴')
             find_content = $(this).attr('data-content')
-            console.log(find_content)
+            //console.log(find_content)
+            $('.find .list .tab_content .tab_item').removeClass('active')
+            $('.find .list .tab_content').find('#'+find_content).addClass('active')
+
+            $('.find .list .tab_list ul li').removeClass('active')
+            $(this).addClass('active')
+
+            $('.find .list .tab_list ul li button span').text('')
+            $(this).find('span').text('선택됨')
+
+            $('.find .list .tab_list ul li').attr('aria-selected', 'false')
+            $(this).attr('aria-selected', 'true')
         }
     })
 
     /**************************** find 탭 기능 : 끝 ********************* */
-})
+
+
+    /****************************** 분양 swiper : 시작 ****************************/
+    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 640px 이상일때 적용 */
+                spaceBetween: 24,
+                centeredSlides: true,
+            },
+        },
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        navigation: {
+            nextEl: '.adopt .list_ctrl .btn_next',
+            prevEl: '.adopt .list_ctrl .btn_prev',
+        },
+    });
+
+    /****************************** 분양 swiper : 종료 ****************************/
+
+})//document.ready
