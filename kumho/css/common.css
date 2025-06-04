@@ -80,6 +80,7 @@ html, body {
     :root {
         --header-h: 56px; /* header 높이 */
         --header-h-m: -56px;
+        --tit-font-size: 2.06rem; /* 35px/17 = 2.06 */
     }
 }
 @media screen and (max-width:768px){
