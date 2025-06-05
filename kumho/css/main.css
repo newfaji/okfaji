@@ -550,6 +550,7 @@ section .tit h2 {
     height: 23.53em; /* 400/17 = 23.53 */
     display: flex; /* ul을 list의 높이에 위아래 가운데 정렬 */
     align-items: center;
+    transition: 0.5s;
 }
 .service .list[data-bg="bg1"] {
     background-image: url(../images/main/service02.jpg);
@@ -614,4 +615,58 @@ section .tit h2 {
 }
 .service .list ul li a:hover .more {
     display: inline-block;
+}
+@media screen and (max-width:1024px){
+    .service .list ul li a h3 {
+        font-size: 1.6rem;
+    }
+    .service .list ul li a p {
+        display: none;
+    }
+    .service .list ul li a .more {
+        display: inline-block;
+        margin: 0;
+    }
+}
+@media screen and (max-width:768px){
+                .service .list {
+                    height: auto; 
+                    display: block;
+                }
+                .service .list ul {
+                    display: block;
+                    width: auto; /* list가 flex의 영향으로 넓이가 필요 */
+                    padding: 0;
+                }
+                .service .list ul li {
+                    width: auto;
+                }
+                .service .list ul li + li::before {
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 11em;
+                    height: 1px;
+                }
+                .service .list ul li a {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 2.94em 0;
+                }
+                .service .list ul li a h3 {
+                    font-size: 1.56rem;
+                    margin: 0 0 0.31em 0;
+                }
+                
+                .service .list ul li a .more {
+                    border: 0;
+                    padding: 0 1.65em 0 0;
+                }
+                .service .list ul li a .more::after {
+                    right: 0.8em;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0.5em;
+                    height: 0.5em;
+                }
 }
