@@ -63,6 +63,9 @@
 }
 
 /* 회사소개 > 찾아오시는길 */
+.ctn_map {
+    margin: 0 0 7.29em 0;
+}
 .ctn_map .map {
     position: relative;
     left: calc(50% - 630px);
@@ -78,4 +81,85 @@
         left: 20px;
         width: calc(100% - 20px);
     }
+}
+.ctn_map .map_address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3.65em 0 6.94em 0;
+}
+.ctn_map .map_address address {
+    font-size: 2.05rem; /* 35 */
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+}
+.ctn_map .map_address .btn_wrap {
+    display: flex;
+    gap: 0.4em;
+}
+.ctn_map .map_address .btn_wrap a {
+    border: 1px solid var(--base-color);
+    border-radius: 2em;
+    padding: 1em 1.59em 0.70em 3.53em;
+    color: var(--tit-color);
+    position: relative;
+}
+.ctn_map .map_address .btn_wrap a::before {
+    content: "";
+    position: absolute;
+    left: 0.35em;
+    top: 0.35em;
+    width: 2.53em;
+    height: 2.53em;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.ctn_map .map_address .btn_wrap a.kakao::before {
+    background-color: #FBE100;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='21' viewBox='0 0 15 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_202_1065)'%3E%3Cpath d='M7.49896 0.000711602C3.35429 -0.00212061 0.00616595 3.31215 7.88594e-06 7.41291C-0.00283877 9.27217 0.765234 10.8605 1.92289 12.2149C4.03412 14.6849 5.88125 17.2858 6.88978 20.4076C6.98087 20.6894 7.11647 21.0095 7.50617 20.9997C7.93014 20.9891 8.04407 20.6304 8.14469 20.3268C9.09111 17.4704 10.6723 15.0026 12.6703 12.7616C13.858 11.4294 14.8105 9.89439 14.9703 8.09136C15.36 3.69733 11.8674 -0.0594007 7.49896 0.000711602ZM10.0481 7.48319C10.038 8.83988 8.83718 10.0266 7.48694 10.0144C6.12513 10.0021 4.9422 8.81144 4.94749 7.45863C4.95278 6.10731 6.15372 4.92206 7.51163 4.9283C8.86698 4.93443 10.058 6.13425 10.0481 7.48313V7.48319Z' fill='%23007DFD'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_202_1065'%3E%3Crect width='15' height='21' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_address .btn_wrap a.naver::before {
+    background-color: #6BBC44;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 0V17H12.6243L6.37571 8.44154V17H0V0H6.37571L12.6243 8.90254V0H19Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_group {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--base-color);
+    padding: 2.11em 0 0 0;
+    margin: 5.18em 0 0 0;
+}
+.ctn_map .map_group h2 {
+    font-size: 2.05rem; /* 35 */
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+}
+.ctn_map .map_group .inner {
+    width: 72.54%;
+}
+.ctn_map .map_group .inner .item {
+    display: flex;
+}
+.ctn_map .map_group .inner .item + .item {
+    margin: 1.53em 0 0 0;
+}
+.ctn_map .map_group .inner .item h3 {
+    width: 7em;
+    font-size: 1.47rem; /* 25 */
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+}
+.ctn_map .map_group .inner .item p {
+    width: calc(100% - 7em);
+}
+.ctn_map .map_group .inner .etc {
+    margin: 1.88em 0 0 0;
+    color: #767676;
+}
+.ctn_map .map_group .inner .etc a {
+    display: inline-block;
 }
