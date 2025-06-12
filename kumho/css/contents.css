@@ -497,3 +497,176 @@
                 font-size: 1.125rem; /* 18 */
             }
 }
+
+/* 홍보센터 - 금호뉴스 - 상담신청 */
+.ctn_notice {
+    margin: 1.76em 0 5.88em 0;
+}
+.ctn_notice h2 {
+    font-size: 2.06rem;
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    margin-bottom: 0.57em;
+}
+.ctn_notice .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 0.59em;
+    padding: 1.59em;
+    height: 15.47em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: normal;
+}
+.ctn_notice .agree_chk {
+    margin: 1.71em 0 4.23em 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.65em;
+}
+.ctn_notice .agree_chk .item input[type="radio"] {
+    display: none;
+}
+.ctn_notice .agree_chk .item label {
+    position: relative; /* before 정렬의 기준 */
+    color: var(--tit-color);
+    font-size: 1.18em;
+    padding-left: 1.55em;
+    cursor: pointer; /* 마우스 포인터 손바닥 */
+}
+.ctn_notice .agree_chk .item label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.1em;
+    width: 1.25em;
+    height: 1.25em;
+    border: 1px solid var(--base-color);
+    border-radius: 50%;
+}
+/* 라디오가 체크 되었을때 label 디자인 */
+.ctn_notice .agree_chk .item input[type="radio"]:checked + label::before {
+    border-color: var(--point-color);
+    background-color: var(--point-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16253 9.83848L0.54834 5.2243L1.96696 3.80586L5.16253 7.00142L12.0331 0.130859L13.4517 1.5493L5.16253 9.83848Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.ctn_notice .regist {
+    border-top: 2px solid var(--base-color);
+}
+.ctn_notice .regist .item {
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    gap: 2.24em;
+}
+.ctn_notice .regist .item label {
+    max-width: 12.5em;
+    width: 25%;
+    font-size: 1.18rem;
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 1.5em 0 0 0;
+}
+.ctn_notice .regist .item select,
+.ctn_notice .regist .item input,
+.ctn_notice .regist .item textarea {
+    margin: 1.29em 0;
+    border: 1px solid var(--base-color);
+    border-radius: 0.29em;
+    min-height: 3.06em;
+    background-color: #F7F7F7;
+    padding: 0.5em 1em;
+}
+.ctn_notice .regist .item .w100 {
+    min-width: calc(100% - 19em);
+    width: calc(75% - 4.5em);
+}
+.ctn_notice .regist .item .w70 {
+    max-width: 37.71em;
+    width: calc(75% - 4.5em);
+}
+.ctn_notice .regist .item textarea {
+    resize: none;
+}
+.ctn_notice .regist .item input::placeholder {
+    color: #767676;
+}
+.ctn_notice .btn_wrap {
+    margin: 2.35em 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_notice .btn_wrap .cancel,
+.ctn_notice .btn_wrap .ok {
+    width: 8.64em;
+    height: 2.73em;
+    text-align: center;
+    border-radius: 0.45em;
+    color: #fff;
+    font-size: 1.29rem;
+    font-weight: var(--bold-weight);
+    padding: 0.4em 0 0 0;
+    line-height: calc(2.73em - 0.4em);
+}
+.ctn_notice .btn_wrap .cancel {
+    background-color: #999999;
+}
+.ctn_notice .btn_wrap .ok {
+    background-color: var(--point-color);
+}
+
+@media screen and (max-width:768px){
+    .ctn_notice h2 {
+        font-size: 1.56rem;
+    }
+    .ctn_notice .agree_box {
+        height: 16.44em;
+    }
+    .ctn_notice .agree_chk {
+        margin: 1.25em 0 4.75em 0;
+        gap: 1.875em;
+    }
+    .ctn_notice .agree_chk .item label {
+        font-size: 1.125em;
+    }
+    .ctn_notice .regist .item {
+        border-bottom: 0;
+        display: block;
+    }
+    .ctn_notice .regist .item label {
+        max-width: none;
+        width: auto;
+        display: block;
+        font-size: 1.125rem;
+        text-align: left;
+        background-color: transparent;
+        padding: 1.22em 0 0.67em 0;
+    }
+    .ctn_notice .regist .item select,
+    .ctn_notice .regist .item input,
+    .ctn_notice .regist .item textarea {
+        margin: 0;
+    }
+    .ctn_notice .regist .item .w100 {
+        min-width: 100%;
+        width: 100%;
+    }
+    .ctn_notice .regist .item .w70 {
+        max-width: 100%;
+        width: 100%;
+    }
+    .ctn_notice .btn_wrap {
+        margin: 2.38em 0 0;
+    }
+    .ctn_notice .btn_wrap .cancel,
+    .ctn_notice .btn_wrap .ok {
+        width: 6.25em;
+        height: 2.7em;
+        font-size: 1.25rem;
+        padding: 0.4em 0 0 0;
+        line-height: calc(2.7em - 0.4em);
+    }
+}
