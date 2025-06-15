@@ -139,7 +139,7 @@
 }
 .ctn_map .map iframe {
     width: 100%;
-    height: 618px;
+    height: 36.35em;
     border: 0;
 }
 @media screen and (max-width:1300px){
@@ -162,6 +162,7 @@
 }
 .ctn_map .map_address .btn_wrap {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.4em;
 }
 .ctn_map .map_address .btn_wrap a {
@@ -170,6 +171,7 @@
     padding: 1em 1.59em 0.70em 3.53em;
     color: var(--tit-color);
     position: relative;
+    white-space: nowrap;
 }
 .ctn_map .map_address .btn_wrap a::before {
     content: "";
@@ -208,26 +210,119 @@
 }
 .ctn_map .map_group .inner .item {
     display: flex;
+    justify-content: space-between;
 }
 .ctn_map .map_group .inner .item + .item {
     margin: 1.53em 0 0 0;
 }
 .ctn_map .map_group .inner .item h3 {
-    width: 7em;
     font-size: 1.47rem; /* 25 */
     line-height: var(--tit-line-height);
     font-weight: var(--bold-weight);
     color: var(--tit-color);
 }
 .ctn_map .map_group .inner .item p {
-    width: calc(100% - 7em);
+    width: calc(100% - 8em);
 }
 .ctn_map .map_group .inner .etc {
     margin: 1.88em 0 0 0;
     color: #767676;
 }
+.ctn_map .map_group .inner .etc p {
+    padding: 0 0 0.4em 1em;
+    position: relative;
+}
+.ctn_map .map_group .inner .etc p::before {
+    content: "※";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 .ctn_map .map_group .inner .etc a {
     display: inline-block;
+    padding: 0.5em 2.7em 0.2em 1em;
+    border: 1px solid #767675;
+    border-radius: 3em;
+    position: relative;
+}
+.ctn_map .map_group .inner .etc a::after {
+    content: "";
+    position: absolute;
+    right: 1.4em;
+    top: 0.6em;
+    width: 0.88em;
+    height: 0.88em;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.375 14.625V0.375H7.5V1.95833H1.95833V13.0417H13.0417V7.5H14.625V14.625H0.375ZM5.67917 10.4292L4.57083 9.32083L11.9333 1.95833H9.08333V0.375H14.625V5.91667H13.0417V3.06667L5.67917 10.4292Z' fill='%23767676'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:1024px){
+    .ctn_map .map iframe {
+        height: 30em;
+    }
+    .ctn_map .map_address {
+        display: block;
+        margin: 2em 0 2em 0;
+    }
+    .ctn_map .map_address address {
+        font-size: 1.8rem; 
+    }
+    .ctn_map .map_address address br {
+        display: none;
+    }
+    .ctn_map .map_address .btn_wrap {
+        margin: 0.7em 0 0 0;
+        justify-content: center;
+    }
+    .ctn_map .map_group h2 {
+        font-size: 1.8rem; 
+    }
+    .ctn_map .map_group .inner .item h3 {
+        font-size: 1.3rem;
+    }
+    .ctn_map .map_group .inner .item p {
+        width: calc(100% - 7em);
+    }
+}
+@media screen and (max-width:768px){
+    .ctn_map .map iframe {
+        height: 20em;
+    }
+    .ctn_map .map_address address {
+        font-size: 1.56rem; 
+    }
+    .ctn_map .map_address .btn_wrap a {
+        padding: 0.5em 1.59em 0.2em 2.8em
+    }
+    .ctn_map .map_address .btn_wrap a::before {
+        left: 0.2em;
+        top: 0.2em;
+        width: 1.8em;
+        height: 1.8em;
+        background-size: 0.8em;
+    }
+    .ctn_map .map_group {
+        display: block;
+        padding: 1.5em 0 0 0;
+        margin: 3em 0 0 0;
+    }
+    .ctn_map .map_group h2 {
+        font-size: 1.56rem; 
+    }
+    .ctn_map .map_group .inner {
+        width: auto;
+        margin: 2em 0 0 0;
+    }
+    .ctn_map .map_group .inner .item + .item {
+        margin: 1em 0 0 0;
+    }
+    .ctn_map .map_group .inner .item h3 {
+        font-size: 1.2rem;
+    }
+    .ctn_map .map_group .inner .item p {
+        width: calc(100% - 6em);
+    }
 }
 
 /* 회사소개 > 연혁 */
