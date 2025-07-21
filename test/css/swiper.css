@@ -1,0 +1,71 @@
+@import url(common_full.css);
+@import url(default.css);
+@import url(font.css);
+
+.story {
+    margin: 100px 0;
+}
+.story h2 {
+    font-size: 45px;
+    color: #1d1d1d;
+    font-weight: 700;
+}
+.story .list {
+    margin: 50px 0 0 0;
+}
+.story .list ul li {
+    width: 300px;
+}
+.story .list ul li .photo {
+    overflow: hidden;
+    height: 200px;
+    border-radius: 20px;
+}
+.story .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.story .list ul li h3 {
+    margin: 20px 0 10px 0;
+    font-size: 25px;
+    color: #1d1d1d;
+    font-weight: 700;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.story .list ul li p {
+    display: none;
+    overflow: hidden;
+    height: 3em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.story .list ul li.swiper-slide-active {
+    width: 400px;
+}
+.story .list ul li.swiper-slide-active .photo {
+    height: 300px;
+}
+.story .list ul li.swiper-slide-active p {
+    display: block;
+}
+
+@media screen and (max-width:768px){
+    .story .list ul li.swiper-slide-active {
+        width: 250px;
+    }
+    .story .list ul li {
+        width: 250px;
+    }
+    .story .list ul li .photo {
+        height: 150px;
+        border-radius: 10px;
+    }
+    .story .list ul li.swiper-slide-active .photo {
+        height: 150px;
+    }
+}
